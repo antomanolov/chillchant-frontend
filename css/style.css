@@ -514,16 +514,16 @@ main .container .right {
     margin-top: 1rem;
 }
 
-.right .friend-reqs h4{
+.right .friend-reqs h4 {
     color: var(--color-gray);
     margin: 1rem 0;
 }
 
 .right .req {
-   background: var(--color-white);
-   padding: var(--card-padding);
-   border-radius: var(--card-border-radius);
-   margin-bottom: 0.7rem; 
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-bottom: 0.7rem;
 }
 
 .right .req .info {
@@ -532,7 +532,239 @@ main .container .right {
     margin-bottom: 1rem;
 }
 
-.right .req .action{
+.right .req .action {
     display: flex;
     gap: 1rem;
+}
+
+
+/* customize modal-general */
+
+.customize-style {
+    background: rgba(255, 255, 255, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size: 0.9rem;
+    /* made it none to see what I am doing with the media queries */
+    display: none;
+}
+
+.customize-style .card {
+    background: var(--color-white);
+    padding: 3rem;
+    border-radius: var(--card-border-radius);
+    width: 50%;
+}
+
+
+/* customize modal- font size */
+.customize-style .font-size {
+    margin-top: 5rem;
+}
+
+.customize-style .font-size>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-light);
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+}
+
+.customize-style .choose-size {
+    background: var(--color-secondary);
+    height: 0.3rem;
+    width: 100%;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.customize-style .choose-size span {
+    width: 1rem;
+    height: 1rem;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.customize-style .choose-size span.active {
+    background: var(--color-primary);
+}
+
+/* customize modal- font color*/
+
+.customize-style .color {
+    margin-top: 2rem;
+}
+
+.customize-style .choose-color {
+    background: var(--color-light);
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.customize-style .choose-color span {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+}
+
+.customize-style .choose-color span:nth-child(1) {
+    background: hsl(252, 75%, 60%);
+}
+
+.customize-style .choose-color span:nth-child(2) {
+    background: hsl(52, 75%, 60%);
+}
+
+.customize-style .choose-color span:nth-child(3) {
+    background: hsl(352, 75%, 60%);
+}
+
+.customize-style .choose-color span:nth-child(4) {
+    background: hsl(152, 75%, 60%);
+}
+
+.customize-style .choose-color span:nth-child(5) {
+    background: hsl(202, 75%, 60%);
+}
+
+.customize-style .choose-color span.active {
+    border: 5px solid white;
+}
+
+/* customize modal- site background */
+
+.customize-style .background {
+    margin-top: 2rem;
+}
+
+.customize-style .choose-bg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.customize-style .choose-bg>div {
+    padding: var(--card-padding);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.customize-style .choose-bg>div.active {
+    border: 2px solid var(--color-primary);
+}
+
+.customize-style .choose-bg .bg-1 {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+.customize-style .choose-bg .bg-3 {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.customize-style .choose-bg .bg-2 {
+    background: var(--color-dark);
+    color: var(--color-white);
+}
+
+
+.customize-style .choose-bg>div span {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--color-gray);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+/* media queries to make the website responsive */
+
+/* laptops */
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 96%;
+    }
+
+    main .container {
+        grid-template-columns: 5rem auto 30vw;
+        gap: 1rem;
+    }
+
+    .left {
+        width: 5rem;
+        z-index: 5;
+    }
+
+    .sidebar h3 {
+        display: none;
+    }
+
+    .left .btn {
+        display: none;
+    }
+
+    main .container .left .profile {
+        display: none;
+    }
+
+}
+
+/* mobile */
+
+@media screen and (max-width: 990px) {
+    nav .search-bar,
+    main .container .left .sidebar > div h3,
+    main .container .right{
+        display: none;
+    }
+    
+    main .container {
+        grid-template-columns: 0 auto 5rem;
+    }
+   
+    main .container .left {
+        grid-column: 3/4;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+
+    .left .notification-popup {
+        position: absolute;
+        left: -20rem;
+        width: 20rem;
+    }
+
+    .left .notification-popup::before {
+        display: absolute;
+        top: 1.3rem;
+        left: calc(20rem - 0.6rem);
+        display: block;
+    }
+
+    main .container .middle {
+        grid-column: 1/3;
+    }
+
 }
