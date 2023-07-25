@@ -1,4 +1,6 @@
 // sidebar
+// todo find a way to match mediaqueries in js with window
+// and make default font style for mobile/tablets the smallest one
 
 const menuItems = document.querySelectorAll('.menu-item');
 const messagesNotif = document.querySelector('#messages-notifications');
@@ -25,20 +27,20 @@ const changeActive = () => {
 }
 
 menuItems.forEach(item => {
-    item.addEventListener('click', ()=>{
-    changeActive();
-    item.classList.add('active');
-    if(item.id != 'notifications') {
-        document.querySelector('.notification-popup').style.display = 'none';
-    } else {
-        document.querySelector('.notification-popup').style.display = 'block';
-        document.querySelector('#notifications .notification-count').style.display = 'none';
+    item.addEventListener('click', () => {
+        changeActive();
+        item.classList.add('active');
+        if (item.id != 'notifications') {
+            document.querySelector('.notification-popup').style.display = 'none';
+        } else {
+            document.querySelector('.notification-popup').style.display = 'block';
+            document.querySelector('#notifications .notification-count').style.display = 'none';
 
-    }
-   }) 
+        }
+    })
 })
 
-messagesNotif.addEventListener('click', ()=> {
+messagesNotif.addEventListener('click', () => {
     messages.style.boxShadow = '0 0 1rem var(--color-primary)'
     messagesNotif.querySelector('.notification-count').style.display = 'none';
     setTimeout(() => {
@@ -54,7 +56,7 @@ const openStyleModal = () => {
 
 const closeStyleModal = (e) => {
     if (e.target.classList.contains('customize-style')) {
-       styleModal.style.display = 'none'
+        styleModal.style.display = 'none'
     }
 }
 
@@ -79,44 +81,44 @@ fontSize.forEach(span => {
         removeActiveFontSize()
         let fontSizes;
         span.classList.toggle('active')
-        if(span.classList.contains('font-size-1')){
+        if (span.classList.contains('font-size-1')) {
             fontSizes = '10px';
             root.style.setProperty('--sticky-top-left', '5.4rem');
             root.style.setProperty('--sticky-top-right', '5.4rem');
-        } else if(span.classList.contains('font-size-2')){
+        } else if (span.classList.contains('font-size-2')) {
             fontSizes = '13px';
             root.style.setProperty('--sticky-top-left', '5.4rem');
             root.style.setProperty('--sticky-top-right', '-7rem');
-        } else if(span.classList.contains('font-size-3')){
+        } else if (span.classList.contains('font-size-3')) {
             fontSizes = '16px';
             root.style.setProperty('--sticky-top-left', '-2rem');
             root.style.setProperty('--sticky-top-right', '-17rem');
-        } else if(span.classList.contains('font-size-4')){
+        } else if (span.classList.contains('font-size-4')) {
             fontSizes = '19px';
             root.style.setProperty('--sticky-top-left', '-5rem');
             root.style.setProperty('--sticky-top-right', '-25rem');
-        } else if(span.classList.contains('font-size-5')){
+        } else if (span.classList.contains('font-size-5')) {
             fontSizes = '22px';
             root.style.setProperty('--sticky-top-left', '-10rem');
             root.style.setProperty('--sticky-top-right', '-33rem');
         }
-    document.querySelector('html').style.fontSize = fontSizes
+        document.querySelector('html').style.fontSize = fontSizes
     });
 })
 
 fontColor.forEach(color => {
-    color.addEventListener('click', () =>{
+    color.addEventListener('click', () => {
         removeActiveFontColor()
         let primaryHue;
-        if(color.classList.contains('color-1')){
+        if (color.classList.contains('color-1')) {
             primaryHue = 252;
-        }else if(color.classList.contains('color-2')){
+        } else if (color.classList.contains('color-2')) {
             primaryHue = 52;
-        } else if(color.classList.contains('color-3')){
+        } else if (color.classList.contains('color-3')) {
             primaryHue = 352;
-        } else if(color.classList.contains('color-4')){
+        } else if (color.classList.contains('color-4')) {
             primaryHue = 152;
-        }else if(color.classList.contains('color-5')){
+        } else if (color.classList.contains('color-5')) {
             primaryHue = 202;
         }
         color.classList.add('active');
@@ -166,3 +168,4 @@ bg3.addEventListener('click', () => {
     bg2.classList.remove('active')
     changeBg();
 })
+
