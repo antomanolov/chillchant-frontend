@@ -735,17 +735,20 @@ main .container .right {
 @media screen and (max-width: 990px) {
     nav .search-bar,
     main .container .left .sidebar > div h3,
-    main .container .right{
+    main .container .right,
+    main .middle .stories .story .name{
         display: none;
     }
     
     main .container {
-        grid-template-columns: 0 auto 5rem;
+        grid-template-columns: 0 70% 3rem;
+        
     }
    
     main .container .left {
         grid-column: 3/4;
         position: fixed;
+        
         bottom: 0;
         right: 0;
     }
