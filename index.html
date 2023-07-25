@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a5bbb14968.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
     <title>chillchant</title>
 </head>
 
@@ -50,17 +51,17 @@
 
                 <!-- sidebar -->
                 <div class="sidebar">
-                    <a href="#" class="menu-item active">
+                    <a class="menu-item">
                         <span><i class="fa-solid fa-house"></i></span>
                         <h3>Home</h3>
                     </a>
 
-                    <a href="" class="menu-item">
+                    <a class="menu-item">
                         <span><i class="fa-solid fa-compass"></i></span>
                         <h3>Explore</h3>
                     </a>
 
-                    <a href="" class="menu-item" id="notifications">
+                    <a class="menu-item" id="notifications">
                         <span><i class="fa-solid fa-bookmark"><small class="notification-count">9+</small></i></span>
                         <h3>Notifications</h3>
                         <!-- notification popup -->
@@ -113,22 +114,22 @@
                         </div>
                     </a>
 
-                    <a href="" class="menu-item" id="messages-notifications">
+                    <a  class="menu-item" id="messages-notifications">
                         <span><i class="fa-solid fa-envelope"><small class="notification-count">6</small></i></span>
                         <h3>Messages</h3>
                     </a>
 
-                    <a href="" class="menu-item">
+                    <a  class="menu-item">
                         <span><i class="fa-solid fa-house"></i></span>
                         <h3>Bookmarks</h3>
                     </a>
 
-                    <a href="" class="menu-item">
+                    <a  class="menu-item" id="theme">
                         <span><i class="fa-solid fa-palette"></i></span>
                         <h3>Style</h3>
                     </a>
 
-                    <a href="" class="menu-item">
+                    <a  class="menu-item">
                         <span><i class="fa-solid fa-user"></i></span>
                         <h3>Profile</h3>
                     </a>
@@ -341,9 +342,10 @@
                         <h4>Messages</h4><i class="fa-solid fa-pen"></i>
                     </div>
                     <!-- searchbar -->
+                    <!-- make this search work with Django, when we have DB -->
                     <div class="search-bar">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" name="" id="" placeholder="Search for chat" id="message-search">
+                        <input type="search" name="" placeholder="Search for chat" id="message-search">
                     </div>
                     <!-- searchbar -->
 
