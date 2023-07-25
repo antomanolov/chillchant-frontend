@@ -13,6 +13,9 @@ var root = document.querySelector(':root')
 
 const fontColor = document.querySelectorAll('.choose-color span')
 
+const bg1 = document.querySelector('.bg-1')
+const bg2 = document.querySelector('.bg-2')
+const bg3 = document.querySelector('.bg-3')
 
 
 const changeActive = () => {
@@ -119,4 +122,47 @@ fontColor.forEach(color => {
         color.classList.add('active');
         root.style.setProperty('--primary-color-hue', primaryHue);
     })
+})
+
+let lightThemeLightness;
+let whiteThemeLightness;
+let darkThemeLigthness;
+
+const changeBg = () => {
+    root.style.setProperty('--light-theme-lightness', lightThemeLightness)
+    root.style.setProperty('--white-theme-lightness', whiteThemeLightness)
+    root.style.setProperty('--dark-theme-lightness', darkThemeLigthness)
+}
+
+bg1.addEventListener('click', () => {
+    bg1.classList.add('active');
+
+    bg2.classList.remove('active')
+    bg3.classList.remove('active')
+    window.location.reload();
+})
+
+
+bg2.addEventListener('click', () => {
+    darkThemeLigthness = '95%';
+    whiteThemeLightness = '20%';
+    lightThemeLightness = '15%';
+
+    bg2.classList.add('active');
+
+    bg1.classList.remove('active')
+    bg3.classList.remove('active')
+    changeBg();
+})
+
+bg3.addEventListener('click', () => {
+    darkThemeLigthness = '95%';
+    whiteThemeLightness = '10%';
+    lightThemeLightness = '0%';
+
+    bg3.classList.add('active');
+
+    bg1.classList.remove('active')
+    bg2.classList.remove('active')
+    changeBg();
 })
