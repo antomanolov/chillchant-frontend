@@ -5,8 +5,11 @@ When the front-end is finished I will start implementing backend with Django, bu
 
 
 # Screenshots
-## This is the main user page.
+## This is the main user page - desktop version.
 ![image](https://github.com/antomanolov/chillchant-frontend/assets/95758427/927e6f5f-fa2a-4dba-aa30-f968546d30dd)
+
+## This is the main user page - mobile version.
+![image](https://github.com/antomanolov/chillchant-frontend/assets/95758427/d99ad3d4-1de4-4a9d-a57e-e2dea2ec739a)
 
 ## The sidebar menu
 ![image](https://github.com/antomanolov/chillchant-frontend/assets/95758427/ca9a7b61-97d0-43ae-8300-2abad704b17b) 
